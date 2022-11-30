@@ -1,8 +1,9 @@
 # Powershell
 Michael's PowerShell projects -  New_Test.csv \
-Is a test user you can upload to your manager server to prove that the code works.However AD [Path] will need to be changed as it references ADUser.Mike.local and mike.local is where the domain goes.
-Example 
-mike.local 
+Is a test user you can upload to your manager server to prove that the code works.However AD [Path] will need to be changed as it references ADUser.Mike.local and mike.local is where the domain goes. \
+Example \
+Destination - ADUser.mike.local \
+Path - "OU=ADUser,DC=mike,DC=local"
 
 Mikes_Script
 Tested versions: Windows-Server (2019 64bit) \
