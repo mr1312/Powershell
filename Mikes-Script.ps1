@@ -154,60 +154,46 @@ catch
 #Functions had to be above this code so it has already been executed for this to call it 
 for ($index = 0; $index -le 5; $index++)
 {
-try 
-{ #Write-Host "Invalid file path "
-        try #For easier testing C:\Users\Administrator\Desktop\Powershell\My-Powershell-Script\New_Test.csv
-        {
-            $User_Choice = Read-Host "
-            Enter which function you want to use 
-            1:Import Users
-            2:Optimizer
-            3:Quit
-            Enter here:"
+  try 
+  { #Write-Host "Invalid file path "
+          try #For easier testing C:\Users\Administrator\Desktop\Powershell\My-Powershell-Script\New_Test.csv
+          {
+              $User_Choice = Read-Host "
+              Enter which function you want to use 
+              1:Import Users
+              2:Optimizer
+              3:Quit
+              Enter here:"
 
-            if($User_Choice -eq "Import Users" -or $User_Choice -eq "import users" -or $User_Choice -eq "import user" -or $User_Choice -eq "Import User" -or $User_Choice -eq "1")
-            {
-                Import_Users # Calls the import users function
-            }
-            elseif($User_Choice -eq "Quit" -or $User_Choice -eq "quit" -or $User_Choice -eq "q" -or $User_Choice -eq "3")
-            {
-                clear
-                exit # Exits the programs 
-            }
-            elseif( $User_Choice -eq "Optimizer" -or $User_Choice -eq "optimizer" -or $User_Choice -eq "2")
-            {
-                Optimizer
-            }
-            else
-            {
-                Write-Host "Invalid input please type 'Import Users' or 'PC Optimzation'"
-    
-            }
-        }
-        catch 
-        {
-            Write-Host "Unkwown error"
-            $Error.Exception.Message
+              if($User_Choice -eq "Import Users" -or $User_Choice -eq "import users" -or $User_Choice -eq "import user" -or $User_Choice -eq "Import User" -or $User_Choice -eq "1")
+              {
+                  Import_Users # Calls the import users function
+              }
+              elseif($User_Choice -eq "Quit" -or $User_Choice -eq "quit" -or $User_Choice -eq "q" -or $User_Choice -eq "3")
+              {
+                  clear
+                  exit # Exits the programs 
+              }
+              elseif( $User_Choice -eq "Optimizer" -or $User_Choice -eq "optimizer" -or $User_Choice -eq "2")
+              {
+                  Optimizer
+              }
+              else
+              {
+                  Write-Host "Invalid input please type 'Import Users' or 'PC Optimzation'"
 
-        } 
-}
-Catch #Checking for another error  
-{
-    Write-Host "Error with user UI please check spelling or file paths for import users"
-    $Error.Exception.Message
-}
-}
+              }
+          }
+          catch 
+          {
+              Write-Host "Unkwown error"
+              $Error.Exception.Message
 
-try
-{
-    function PC_Optimzation 
-    {
-    
-    }
-
-
-}
-Catch 
-{
-
+          } 
+  }
+  Catch #Checking for another error  
+  {
+      Write-Host "Error with user UI please check spelling or file paths for import users"
+      $Error.Exception.Message
+  }
 }
