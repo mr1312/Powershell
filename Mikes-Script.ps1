@@ -169,12 +169,12 @@ try
             {
                 Import_Users # Calls the import users function
             }
-            if($User_Choice -eq "Quit" -or $User_Choice -eq "quit" -or $User_Choice -eq "q" -or $User_Choice -eq "3")
+            elseif($User_Choice -eq "Quit" -or $User_Choice -eq "quit" -or $User_Choice -eq "q" -or $User_Choice -eq "3")
             {
                 clear
                 exit # Exits the programs 
             }
-            if( $User_Choice -eq "Optimizer" -or $User_Choice -eq "optimizer" -or $User_Choice -eq "2")
+            elseif( $User_Choice -eq "Optimizer" -or $User_Choice -eq "optimizer" -or $User_Choice -eq "2")
             {
                 Optimizer
             }
