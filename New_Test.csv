@@ -1,0 +1,3 @@
+SamAccountName,password,path,GivenName,Surname,Initials,Name,DisplayName,UserPrincipalName,Department,Description,Office,OfficePhone,EmailAddress,StreetAddress,POBox ,City,State,PostalCode,Title,Company
+
+MasterChief,MurderMachine#8989,"OU=ADUsers,DC=Mike,DC=local", John,117,MC,Master Chief,Master Chief,Master.Chief@Mike.local,Marketing,His awesomeness brings sales,M203,8764142,MC#Demon@gmail.com,Reach St,, 
