@@ -4,6 +4,7 @@
         function Import_Users
         {
             Import-Module ActiveDirectory #I Assume it takes functions from the ActiveDirectiry feature 
+            $Return_Flag = "False"
             Try
             {
             $Path = Read-Host -Prompt "Enter import user file path (csv)"  -ErrorAction stop
@@ -27,6 +28,7 @@
                     if (Get-ADUser -F {SamAccountName -eq $Username} )  #Search if generated user is already in Active Directory
                     {
                         Write-Warning "$Username already exist Bro. Guess you screwed up ha."
+                        $Return_Flag = "False"
                     }
                     else 
                     {
@@ -44,6 +46,7 @@
                     OfficePhone = $Line.OfficePhone
                     }           #end of hash user instance/object creation   
                     New-ADUser @UserCreated_Instance
+                    $Return_Flag = "True"
                      #An account is created on a line per line basis
                     }
 
@@ -55,7 +58,14 @@
                 Write-Host "User generation failed" -ForegroundColor Red
                 $Error.Exception.Message
             }
-            return Write-Host "User generation success" 
+            if ($Return_Flag -eq "True")
+            {
+              return Write-Host "User generation success"
+            }
+            elseif ($Return_Flag -eq "False")
+            {
+                return Write-Host "User generation failure" 
+            }
         }
 }
 Catch 
